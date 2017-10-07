@@ -8,7 +8,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 
-public class PlayerKunapuli extends JPanel implements ActionListener
+public class PlayerKunapuli implements ActionListener
 {  
    public String pHand;
    public JFrame frame;
@@ -24,6 +24,24 @@ public class PlayerKunapuli extends JPanel implements ActionListener
    {
       frame = new JFrame("Player");
       JPanel panel = new JPanel();
+      
+           // result = new JFrame();
+//      rPanel = new JPanel();
+//       
+//      rPanel.setLayout(new BoxLayout(rPanel, BoxLayout.PAGE_AXIS));
+//      rPanel.add(gameresult);
+//      rPanel.add(choice);
+//      // Add JButton to panel
+//      result.add(rPanel);
+//      
+//      //Set Text for JButton
+//      //
+//        
+//      result.setBackground(new Color(253, 153, 255));
+//      result.setSize(1500,1500);
+//      result.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+//      result.setLocationRelativeTo(null);
+//      result.setVisible(true);
       
       panel.setLayout(new GridBagLayout());
       JLabel label = new JLabel("Please pick one:");
@@ -81,25 +99,25 @@ public class PlayerKunapuli extends JPanel implements ActionListener
       {
          System.out.println(pHand);
          compare.playRCS(pHand);
-         frame.setVisible(true);
+         frame.setVisible(false);
       }
       else if (pHand.equals("SCISSORS"))
       {
          System.out.println(pHand);
          compare.playRCS(pHand);
-         frame.setVisible(true);
+         frame.setVisible(false);
       }
       else if (pHand.equals("PAPER"))
       {
          System.out.println(pHand);
          compare.playRCS(pHand);
-         frame.setVisible(true);
+         frame.setVisible(false);
       }
       else
       {
          System.out.println(pHand);
          compare.playRCS(pHand);
-         frame.setVisible(true);
+         frame.setVisible(false);
       }
    }
 }

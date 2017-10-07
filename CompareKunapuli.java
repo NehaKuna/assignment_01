@@ -7,7 +7,7 @@ import java.awt.GridBagConstraints;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class CompareKunapuli
+public class CompareKunapuli implements ActionListener
 {
    public static String player1, player2, answer;
    public JFrame result;
@@ -23,11 +23,10 @@ public class CompareKunapuli
    public String playH(String x)
    {
       player2 = x;
-      System.out.println("test");
       return player2;
    }
    
-   public void playRCS(String player1)
+   public ResultKunapuli playRCS(String player1)
    {
       CompGenKunapuli comput = new CompGenKunapuli();
       String player2 = comput.computerC;
@@ -76,23 +75,11 @@ public class CompareKunapuli
      else if(player1.equals("SCISSORS") && player2.equals("PAPER"))
      {
          choice = new JLabel("You chose " + player1 + " and the computer chose " + player2);
-         gameresult= new JLabel("You lost");
+         gameresult = new JLabel("You lost");
      }
-
-     result = new JFrame("Result");
-     rPanel = new JPanel();
-      
-     rPanel.setLayout(new BoxLayout(rPanel, BoxLayout.PAGE_AXIS));
-     rPanel.add(gameresult);
-     rPanel.add(choice);
-     result.add(rPanel);
-       
-     result.setBackground(new Color(253, 153, 255));
-     result.setSize(1500,1500);
-     result.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-     result.setLocationRelativeTo(null);
-     result.setVisible(true);
      
-     //Add option to try again. Refer back to PlayerKunapuli class.
+     // Create a new Result
+     ResultKunapuli result = new ResultKunapuli(gameresult, choice);
+     return result;
    }
 }
