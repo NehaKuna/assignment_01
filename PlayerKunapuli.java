@@ -25,27 +25,10 @@ public class PlayerKunapuli implements ActionListener
       frame = new JFrame("Player");
       JPanel panel = new JPanel();
       
-           // result = new JFrame();
-//      rPanel = new JPanel();
-//       
-//      rPanel.setLayout(new BoxLayout(rPanel, BoxLayout.PAGE_AXIS));
-//      rPanel.add(gameresult);
-//      rPanel.add(choice);
-//      // Add JButton to panel
-//      result.add(rPanel);
-//      
-//      //Set Text for JButton
-//      //
-//        
-//      result.setBackground(new Color(253, 153, 255));
-//      result.setSize(1500,1500);
-//      result.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-//      result.setLocationRelativeTo(null);
-//      result.setVisible(true);
-      
       panel.setLayout(new GridBagLayout());
       JLabel label = new JLabel("Please pick one:");
       panel.add(label);
+      
       
       GridBagConstraints gbc = new GridBagConstraints();
       JButton button = new JButton();
@@ -83,41 +66,72 @@ public class PlayerKunapuli implements ActionListener
       button3.addActionListener(this);
       button3.setActionCommand("PAPER");
       
+      
+      
       frame.add(panel);
+      
       frame.setBackground(new Color(107, 178, 174));
       frame.setSize(1500,1500);
       frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
       frame.setLocationRelativeTo(null);
+
       frame.setVisible(true);
    }  
    public void actionPerformed(ActionEvent e)
    {
       CompareKunapuli compare = new CompareKunapuli();
+      ResultsKunapuli result = null;
       
       String pHand = e.getActionCommand();
       if (pHand.equals("ROCK"))
       {
          System.out.println(pHand);
-         compare.playRCS(pHand);
-         frame.setVisible(false);
+         result = compare.playRCS(pHand);
+         //frame.setVisible(false);
+         displayResults(result);
       }
       else if (pHand.equals("SCISSORS"))
       {
          System.out.println(pHand);
-         compare.playRCS(pHand);
-         frame.setVisible(false);
+         result = compare.playRCS(pHand);
+         //frame.setVisible(false);
+         displayResults(result);
       }
       else if (pHand.equals("PAPER"))
       {
          System.out.println(pHand);
-         compare.playRCS(pHand);
-         frame.setVisible(false);
+         result = compare.playRCS(pHand);
+         //frame.setVisible(false);
+         displayResults(result);
       }
       else
       {
          System.out.println(pHand);
-         compare.playRCS(pHand);
-         frame.setVisible(false);
+         result = compare.playRCS(pHand);
+         //frame.setVisible(false);
+         displayResults(result);
       }
+   }
+   public void displayResults(ResultsKunapuli r){
+    //add results panel
+      JPanel resultsPanel = new JPanel();
+      JLabel resultsLabel = new JLabel("Results");
+      GridBagConstraints rgb = new GridBagConstraints();
+      rgb.fill = GridBagConstraints.HORIZONTAL;
+      rgb.gridwidth = 50; 
+      rgb.gridx = 10;
+      rgb.gridy = 200;
+      resultsPanel.add(resultsLabel, rgb);
+      
+      resultsPanel.add(r.getGameResult());
+      resultsPanel.add(r.getChoice());
+      frame.add(resultsPanel);
+       
+     // result.setBackground(new Color(253, 153, 255));
+     // result.setSize(1500,1500);
+     // result.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+     // result.setLocationRelativeTo(null);
+     // result.setVisible(true);
+      
    }
 }

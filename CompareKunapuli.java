@@ -7,7 +7,7 @@ import java.awt.GridBagConstraints;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class CompareKunapuli implements ActionListener
+public class CompareKunapuli
 {
    public static String player1, player2, answer;
    public JFrame result;
@@ -26,7 +26,7 @@ public class CompareKunapuli implements ActionListener
       return player2;
    }
    
-   public ResultKunapuli playRCS(String player1)
+   public ResultsKunapuli playRCS(String player1)
    {
       CompGenKunapuli comput = new CompGenKunapuli();
       String player2 = comput.computerC;
@@ -79,7 +79,7 @@ public class CompareKunapuli implements ActionListener
      }
      
      // Create a new Result
-     ResultKunapuli result = new ResultKunapuli(gameresult, choice);
+     ResultsKunapuli result = new ResultsKunapuli(gameresult, choice);
      return result;
    }
 }
