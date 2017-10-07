@@ -35,22 +35,22 @@ public class CompareKunapuli
 
      if (player1.equals("ROCK") && player2.equals("ROCK"))
      {    
-         answer = "tie";
-         gameresult = new JLabel("It's a " + answer);
+         choice = new JLabel("You chose " + player1 + " and the computer chose " + player2);
+         gameresult = new JLabel("It's a tie");
      }
      else if (player1.equals("SCISSORS") && player2.equals("SCISSORS"))
      {    
-         answer = "tie";
-         gameresult = new JLabel("It's a " + answer);
+         choice = new JLabel("You chose " + player1 + " and the computer chose " + player2);
+         gameresult = new JLabel("It's a tie");
      }
      else if (player1.equals("PAPER") && player2.equals("PAPER"))
      {    
-         answer = "tie";
-         gameresult = new JLabel("It's a " + answer);
+         choice = new JLabel("You chose " + player1 + " and the computer chose " + player2);
+         gameresult = new JLabel("It's a tie");
      }
      else if(player1.equals("ROCK") && player2.equals("PAPER"))
      {
-          choice = new JLabel("You chose " + player1 + " and the computer chose " + player2);
+         choice = new JLabel("You chose " + player1 + " and the computer chose " + player2);
          gameresult = new JLabel("You lost"); 
      }
      else if(player1.equals("PAPER") && player2.equals("ROCK"))

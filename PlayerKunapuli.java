@@ -22,7 +22,6 @@ public class PlayerKunapuli extends JPanel implements ActionListener
    
    public void chooseHand()
    {
-      CompareKunapuli test = new CompareKunapuli();
       frame = new JFrame("Player");
       JPanel panel = new JPanel();
       
@@ -75,32 +74,32 @@ public class PlayerKunapuli extends JPanel implements ActionListener
    }  
    public void actionPerformed(ActionEvent e)
    {
-      CompareKunapuli info = new CompareKunapuli();
+      CompareKunapuli compare = new CompareKunapuli();
       
       String pHand = e.getActionCommand();
       if (pHand.equals("ROCK"))
       {
          System.out.println(pHand);
-         info.playRCS(pHand);
-         frame.setVisible(false);
+         compare.playRCS(pHand);
+         frame.setVisible(true);
       }
       else if (pHand.equals("SCISSORS"))
       {
          System.out.println(pHand);
-         info.playRCS(pHand);
-         frame.setVisible(false);
+         compare.playRCS(pHand);
+         frame.setVisible(true);
       }
       else if (pHand.equals("PAPER"))
       {
          System.out.println(pHand);
-         info.playRCS(pHand);
-         frame.setVisible(false);
+         compare.playRCS(pHand);
+         frame.setVisible(true);
       }
       else
       {
          System.out.println(pHand);
-         info.playRCS(pHand);
-         frame.setVisible(false);
+         compare.playRCS(pHand);
+         frame.setVisible(true);
       }
    }
 }
