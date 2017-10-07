@@ -8,7 +8,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 
-public class PlayerKunapuli extends JPanel implements ActionListener
+public class PlayerKunapuli implements ActionListener
 {  
    public String pHand;
    public JFrame frame;
@@ -81,25 +81,25 @@ public class PlayerKunapuli extends JPanel implements ActionListener
       {
          System.out.println(pHand);
          compare.playRCS(pHand);
-         frame.setVisible(true);
+         frame.setVisible(false);
       }
       else if (pHand.equals("SCISSORS"))
       {
          System.out.println(pHand);
          compare.playRCS(pHand);
-         frame.setVisible(true);
+         frame.setVisible(false);
       }
       else if (pHand.equals("PAPER"))
       {
          System.out.println(pHand);
          compare.playRCS(pHand);
-         frame.setVisible(true);
+         frame.setVisible(false);
       }
       else
       {
          System.out.println(pHand);
          compare.playRCS(pHand);
-         frame.setVisible(true);
+         frame.setVisible(false);
       }
    }
 }

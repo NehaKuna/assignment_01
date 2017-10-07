@@ -7,7 +7,7 @@ import java.awt.GridBagConstraints;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class CompareKunapuli
+public class CompareKunapuli implements ActionListener
 {
    public static String player1, player2, answer;
    public JFrame result;
@@ -78,21 +78,26 @@ public class CompareKunapuli
          choice = new JLabel("You chose " + player1 + " and the computer chose " + player2);
          gameresult= new JLabel("You lost");
      }
-
-     result = new JFrame("Result");
+     
+     // PlayerKunapuli tryA = new PlayerKuanpuli();
+     result = new JFrame();
      rPanel = new JPanel();
+     // rButton = new JButton();
       
      rPanel.setLayout(new BoxLayout(rPanel, BoxLayout.PAGE_AXIS));
      rPanel.add(gameresult);
      rPanel.add(choice);
+     // rPanel.add(rButton);
      result.add(rPanel);
+     
+     /*rButton.setText("Try Again");
+     rButton.addActionListener(this);
+     button.setActionCommand(tryA.chooseHand);*/
        
      result.setBackground(new Color(253, 153, 255));
      result.setSize(1500,1500);
      result.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
      result.setLocationRelativeTo(null);
      result.setVisible(true);
-     
-     //Add option to try again. Refer back to PlayerKunapuli class.
    }
 }
