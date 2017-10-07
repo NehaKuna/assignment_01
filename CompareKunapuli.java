@@ -23,11 +23,10 @@ public class CompareKunapuli implements ActionListener
    public String playH(String x)
    {
       player2 = x;
-      System.out.println("test");
       return player2;
    }
    
-   public void playRCS(String player1)
+   public ResultKunapuli playRCS(String player1)
    {
       CompGenKunapuli comput = new CompGenKunapuli();
       String player2 = comput.computerC;
@@ -76,28 +75,11 @@ public class CompareKunapuli implements ActionListener
      else if(player1.equals("SCISSORS") && player2.equals("PAPER"))
      {
          choice = new JLabel("You chose " + player1 + " and the computer chose " + player2);
-         gameresult= new JLabel("You lost");
+         gameresult = new JLabel("You lost");
      }
      
-     // PlayerKunapuli tryA = new PlayerKuanpuli();
-     result = new JFrame();
-     rPanel = new JPanel();
-     // rButton = new JButton();
-      
-     rPanel.setLayout(new BoxLayout(rPanel, BoxLayout.PAGE_AXIS));
-     rPanel.add(gameresult);
-     rPanel.add(choice);
-     // rPanel.add(rButton);
-     result.add(rPanel);
-     
-     /*rButton.setText("Try Again");
-     rButton.addActionListener(this);
-     button.setActionCommand(tryA.chooseHand);*/
-       
-     result.setBackground(new Color(253, 153, 255));
-     result.setSize(1500,1500);
-     result.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-     result.setLocationRelativeTo(null);
-     result.setVisible(true);
+     // Create a new Result
+     ResultKunapuli result = new ResultKunapuli(gameresult, choice);
+     return result;
    }
 }
